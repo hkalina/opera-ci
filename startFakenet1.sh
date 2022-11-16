@@ -14,6 +14,9 @@ echo "Starting Opera with 1/1 fakenet..."
         --http.api=eth,web3,net,txpool,ftm \
         --db.preset=ldb-1 2>opera.log &
 export OPERAPID=$!
+sleep 3
 echo "Opera started with PID $OPERAPID"
 echo $OPERAPID >opera.pid
+echo "IPC file:"
+ls ./data/opera.ipc
 
