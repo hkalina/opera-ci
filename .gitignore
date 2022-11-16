@@ -1,4 +1,4 @@
 opera
+opera.pid
 data
-log.txt
-
+*.log

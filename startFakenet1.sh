@@ -12,7 +12,7 @@ echo "Starting Opera with 1/1 fakenet..."
         --http.corsdomain="*" \
         --http.vhosts="*" \
         --http.api=eth,web3,net,txpool,ftm \
-        --db.preset=ldb-1 2>log.txt &
+        --db.preset=ldb-1 2>opera.log &
 export OPERAPID=$!
 echo "Opera started with PID $OPERAPID"
 echo $OPERAPID >opera.pid
