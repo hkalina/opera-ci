@@ -1,4 +1,13 @@
 #!/bin/bash
+
+if ./opera version | grep "Version: 1.1.1-"; then
+  echo "The opera version is 1.1.1 - skip db.preset"
+  DBPRESET=''
+else
+  echo "The opera version is NOT 1.1.1 - db.preset will be set"
+  DBPRESET='--db.preset=ldb-1'
+fi
+
 echo "Starting Opera with 1/1 fakenet..."
 ./opera \
         --fakenet 1/1 \
@@ -12,7 +21,7 @@ echo "Starting Opera with 1/1 fakenet..."
         --http.corsdomain="*" \
         --http.vhosts="*" \
         --http.api=eth,web3,net,txpool,ftm \
-        --db.preset=ldb-1 2>opera.log &
+        $DBPRESET 2>opera.log &
 export OPERAPID=$!
 sleep 3
 echo "Opera started with PID $OPERAPID"
