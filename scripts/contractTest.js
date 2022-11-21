@@ -19,6 +19,9 @@ var simple = simpleContract.new(12, { from:initialAccount, data:bytecode, gas:0x
         console.log("Setting A to 1...");
         contract.setA("0x1", {from: initialAccount})
         admin.sleep(1);
+        
+        console.log("Reading A...");
+        console.log("A is " + contract.getA() + " (expected 0x1)");
 
         console.log("Setting A to 5...");
         contract.setA("0x5", {from: initialAccount})
