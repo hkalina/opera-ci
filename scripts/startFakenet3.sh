@@ -51,5 +51,5 @@ done
 echo "Network of $N validators and one API node started..."
 
 echo "Waiting for full initialization..."
-sleep 4
+sleep 10
 

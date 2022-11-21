@@ -31,7 +31,7 @@ var simple = simpleContract.new(12, { from:initialAccount, data:bytecode, gas:0x
         console.log("A is " + contract.getA() + " (expected 0x5)");
     }
 })
-admin.sleep(1); // necessary!
+admin.sleep(3); // necessary!
 
 /*
 // Contract source code:
