@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from web3 import Web3  # pip3 install web3
 import solcx  # pip3 install py-solc-x
 import os
@@ -5,11 +6,12 @@ import sys
 
 web3 = Web3(Web3.HTTPProvider('http://127.0.0.1:4001'))
 
-compiledContract = solcx.compile_files('incrementer.sol')
-abi = compiledContract['incrementer.sol:Incrementer']['abi']
-bytecode = compiledContract['incrementer.sol:Incrementer']['bin']
+solcx.install_solc('0.5')
+compiledContract = solcx.compile_files('scripts/incrementer.sol')
+abi = compiledContract['scripts/incrementer.sol:Incrementer']['abi']
+bytecode = compiledContract['scripts/incrementer.sol:Incrementer']['bin']
 
-keystoreDir = '../data1/keystore/'
+keystoreDir = 'data1/keystore/'
 keystoreFiles = os.listdir(keystoreDir)
 keystoreFiles = [f for f in keystoreFiles if os.path.isfile(keystoreDir + f)]
 
