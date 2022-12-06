@@ -6,7 +6,7 @@ import sys
 
 web3 = Web3(Web3.HTTPProvider('http://127.0.0.1:4001'))
 
-solcx.install_solc('0.5')
+solcx.install_solc('0.6.0')
 compiledContract = solcx.compile_files('scripts/incrementer.sol')
 abi = compiledContract['scripts/incrementer.sol:Incrementer']['abi']
 bytecode = compiledContract['scripts/incrementer.sol:Incrementer']['bin']
