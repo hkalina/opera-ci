@@ -1,8 +1,8 @@
 var initialAccount = ftm.accounts[0];
-var secondAccount = personal.newAccount("");
+var secondAccount = personal.newAccount("fakepassword");
 
 console.log("Sending money from " + initialAccount + " to " + secondAccount + "...");
-var tx = ftm.sendTransaction({ from:initialAccount, to:secondAccount, value:"10000000000000000000" });
+var tx = ftm.sendTransaction({ from:initialAccount, to:secondAccount, value:"100000000000000000000" });
 admin.sleep(1);
 
 console.log("Deploying testing smart contract...");
