@@ -15,6 +15,7 @@ keystoreDir = 'data1/keystore/'
 keystoreFiles = os.listdir(keystoreDir)
 keystoreFiles = [f for f in keystoreFiles if os.path.isfile(keystoreDir + f)]
 
+print(f'Loading private key from keystore {keystoreDir + keystoreFiles[0]}')
 with open(keystoreDir + keystoreFiles[0]) as keyfile:
     privateKey = web3.eth.account.decrypt(keyfile.read(), 'fakepassword')
 account_from = {
